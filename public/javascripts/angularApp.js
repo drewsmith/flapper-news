@@ -43,7 +43,8 @@ app.factory('posts', ['$http', function($http) {
       angular.copy(data, o.posts);
     });
   };
-  o.create = function() {
+  o.create = function(post) {
+    console.log(post);
     return $http.post('/posts', post).success(function(data) {
       o.posts.push(data);
     });
